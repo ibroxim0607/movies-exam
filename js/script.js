@@ -35,7 +35,7 @@ let renderMovies = data => {
 
 const movieToSee = async title => {
   try {
-    let res = await fetch (`httpsgit ://www.omdbapi.com/?apikey=83a076fe&s=${title}&page=${later}`).finally(addLoader);
+    let res = await fetch (`https://www.omdbapi.com/?apikey=83a076fe&s=${title}&page=${later}`).finally(addLoader);
 
     let data = await res.json();
     renderMovies(data.Search);
