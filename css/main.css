@@ -1,0 +1,20 @@
+.movie-heading {
+  font-size: 54px;
+  color: darkgreen;
+}
+
+.card {
+  border: 3px solid darkblue;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgoldenrodyellow;
+  cursor: pointer;
+  transition: ease 0.3s;
+  width: 400px;
+}
+
+body{
+  background-image: url(../images/HD-wallpaper-filmstrip-textures-vector-textures-grunge-backgrounds-cinematograph-film-strip-background-with-filmstrip-grunge-cinema-background-thumbnail.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

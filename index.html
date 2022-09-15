@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Movies</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="container mt-5 text-center">
+        <h1 class="movie-heading fw-bold text-center m-0">SearchMovie</h1>
+
+        <!-- FORM -->
+
+        <form class="js-search-form mx-auto text-center mt-4 mb-3">
+          <input class="js-search-input py-3 ps-3 rounded border-0 shadow w-25 bg-light" type="text" placeholder="Search movie ...">
+
+          <button class="search-btn border-0 py-3 shadow rounded-4 px-5 bg-info ms-3 btn btn-warning" type="submit">Search</button>
+        </form>
+
+        <!-- RESULT LIST -->
+
+        <ul class="js-movies-list list-unstyled d-flex flex-wrap justify-content-around mt-5"></ul>
+
+        <!-- SPINNER -->
+
+        <button class="btn btn-dark spinner d-none mb-5 rounded-pill p-2 " type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+
+        <!-- PAGINATION BTNS -->
+
+        <div class="js-page-buttons d-none mb-5">
+          <button class="js-prev-button border-0 py-2 shadow rounded-3 px-5 bg-white">Prev</button>
+          <button class="js-next-button border-0 py-2 shadow rounded-3 px-5 bg-white ms-3">Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+
+  <div class="modal fade js-movie-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title js-modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <span class="modal-body js-modal-year"></span>
+      <span class="modal-body js-modal-type"></span>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template -->
+
+<template id="js-movie-template">
+  <li class="js-result movie-card-js card mb-3 py-2 card-item col-3 bg-dark">
+    <img class="js-movie-img card-img-top card-img mt-1" src="" alt="" width="250" height="400">
+    <div class="card-body">
+      <h5 class="js-movie-title card-title"></h5>
+      <span class="movie-type-js d-block"></span>
+      <button class="btn btn-primary js-movie-more-button mt-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        More info
+      </button>
+    </div>
+  </li>
+</template>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/script.js "></script>
+</body>
+</html>
