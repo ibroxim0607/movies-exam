@@ -33,19 +33,19 @@ let renderMovies = data => {
 }
 
 
-const movieToSee = async title => {
+const movieToSee = async movieTutle => {
   try {
-    let res = await fetch (`https://www.omdbapi.com/?apikey=83a076fe&s=${title}&page=${later}`).finally(addLoader);
+    let res = await fetch (`https://www.omdbapi.com/?apikey=83a076fe&s=${movieTutle}&page=${later}`).finally(addLoader);
 
     let data = await res.json();
     renderMovies(data.Search);
 
     elMovieList.addEventListener('click', evt => {
       if (evt.target.matches('.js-movie-more-button')) {
-        let movieId = evt.target.closest(".js-result").dataset.movieId;
+        let elMovieId = evt.target.closest(".js-result").dataset.movieId;
 
         let dataFindMovie = data.Search.find(movie => {
-          return movie.imdbID === movieId;
+          return movie.imdbID === elMovieId;
         })
 
         $('.js-modal-title', elMovieModal).textContent = `Movie: ${dataFindMovie.Title}`;
